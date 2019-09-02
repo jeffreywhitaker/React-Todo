@@ -6,7 +6,7 @@ class TodoList extends React.Component {
         return (
             <div>
                 {this.props.messagesProps.map((listItem) => {
-                    return <Todo item={listItem}/>
+                    return <Todo handleSetAsComplete={this.props.handleSetAsComplete} item={listItem}  key={listItem.id}/>
                 })}
             </div>
         )
