@@ -30,7 +30,8 @@ class App extends React.Component {
           id: Date.now(),
           completed: false,
         }
-      ]
+      ],
+      task: ''
     })
   }
 
@@ -42,22 +43,22 @@ class App extends React.Component {
   }
 
   handleDeletion = event => {
-    this.state.todoList.filter(() => {
-      this.setState(
-        ...this.state.todoList,
-        this.state.todoList.completed === false)
-    })
+    function deletionLogic(todoItem) {
+      return todoItem.completed === false
+    }
+
+    this.setState({
+      todoList: this.state.todoList.filter(deletionLogic)
+    });
   }
 
-  // you will need a place to store your state in this component.
-  // design `App` to be the parent component of your application.
-  // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoList messagesProps={this.state.todoList} handleSetAsComplete={this.handleSetAsComplete} />
         <TodoForm 
+          todoValue={this.state.task}
           todoformProps={this.state.todoList}
           handleMessageToState={this.handleMessageToState}
           handleAddTodoItem={this.handleAddTodoItem}
