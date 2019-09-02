@@ -1,5 +1,6 @@
 import React from 'react'
 import TodoList from './components/TodoComponents/TodoList'
+import TodoForm from './components/TodoComponents/TodoForm'
 
 class App extends React.Component {
   constructor() {
@@ -40,8 +41,7 @@ class App extends React.Component {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoList messagesProps={this.state.todoList} />
-        <input onChange={this.handleMessageToState}/>
-        <button onClick={this.handleAddTodoItem}>Add to List</button>
+        <TodoForm todoformProps={this.state.todoList}/>
       </div>
     )
   }
