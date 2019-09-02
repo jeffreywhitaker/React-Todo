@@ -4,8 +4,9 @@ class TodoList extends React.Component {
     render() {
         return (
             <div>
-                <input />
-                <button>Add to List</button>
+                {this.props.messagesProps.map((listItem) => {
+                    return <div>{listItem.task}</div>
+                })}
             </div>
         )
     }

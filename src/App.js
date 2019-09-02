@@ -5,8 +5,32 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      message: ''
+      task: "",
+      todoList: [
+        {
+          task: "",
+          id: "",
+          completed: false,
+        }
+      ]
     }
+  }
+
+  handleMessageToState = event => {
+    console.log(this.state.task)
+    this.setState({task: event.target.value})
+  }
+  handleAddTodoItem = event => {
+    this.setState({
+      todoList: [
+        ...this.state.todoList,
+        {
+          task: this.state.task,
+          id: "",
+          completed: false,
+        }
+      ]
+    })
   }
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -15,7 +39,9 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList />
+        <TodoList messagesProps={this.state.todoList} />
+        <input onChange={this.handleMessageToState}/>
+        <button onClick={this.handleAddTodoItem}>Add to List</button>
       </div>
     )
   }
