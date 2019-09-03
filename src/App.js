@@ -1,6 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
+
 import TodoList from './components/TodoComponents/TodoList'
 import TodoForm from './components/TodoComponents/TodoForm'
+
+const MainBody = styled.section`
+  background-color: cyan;
+  max-width: 1100px;
+  margin: 0 auto;
+`
+
+const MainHeader = styled.h2`
+  text-align: center;
+`
 
 class App extends React.Component {
   constructor() {
@@ -9,7 +21,7 @@ class App extends React.Component {
       task: "",
       todoList: [
         {
-          task: "starting task",
+          task: "sdsdfd",
           id: Date.now(),
           completed: false,
         }
@@ -54,9 +66,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoList messagesProps={this.state.todoList} handleSetAsComplete={this.handleSetAsComplete} />
+      <MainBody>
+        <MainHeader>Jeff's To-Do App</MainHeader>
         <TodoForm 
           todoValue={this.state.task}
           todoformProps={this.state.todoList}
@@ -64,7 +75,9 @@ class App extends React.Component {
           handleAddTodoItem={this.handleAddTodoItem}
           handleDeletion={this.handleDeletion}
         />
-      </div>
+        <TodoList messagesProps={this.state.todoList} handleSetAsComplete={this.handleSetAsComplete} />
+        <span>*** Click on each item when completed.</span>
+      </MainBody>
     )
   }
 }
