@@ -12,6 +12,8 @@ const MainBody = styled.section`
 
 const MainHeader = styled.h2`
   text-align: center;
+  margin-top: 0px;
+  padding-top: 10px;
 `
 
 class App extends React.Component {
@@ -19,13 +21,7 @@ class App extends React.Component {
     super()
     this.state = {
       task: "",
-      todoList: [
-        {
-          task: "sdsdfd",
-          id: Date.now(),
-          completed: false,
-        }
-      ]
+      todoList: []
     }
   }
 
@@ -33,7 +29,7 @@ class App extends React.Component {
     this.setState({task: event.target.value})
   }
 
-  handleAddTodoItem = event => {
+  handleAddTodoItem = () => {
     this.setState({
       todoList: [
         ...this.state.todoList,
@@ -43,7 +39,7 @@ class App extends React.Component {
           completed: false,
         }
       ],
-      task: ''
+      task: ""
     })
   }
 
