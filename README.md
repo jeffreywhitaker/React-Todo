@@ -2,7 +2,7 @@
 
 We're going to practice building a stateful class component with this project. Even though hooks are gaining popularity among react developers, class components are going to be around for a long time. It's imperative that you get use to class components, and feel comfortable working with class components since you'll most likely need to work with them if you are hired to work on a React app.
 
-## Initializing the project.
+## Initializing the project
 
 - `Fork and clone` this project and cd into your cloned version.
 - `yarn install` will pull in all the node_modules you need.
@@ -37,7 +37,7 @@ We're going to practice building a stateful class component with this project. E
 - The `completed` field should default to `false` and will be the field that we toggle when we complete a todo.
 - The `id` field is a unique `Time Stamp` that will be assigned by `Date.now()`.
 
-#### Instructions
+## Full Instructions
 
 - **Don't focus on styling yet**. We want you to worry about function over form today.
 - Your todo list should display a list of todos, an input field, a submit button, and a clear all button.
@@ -58,7 +58,7 @@ We're going to practice building a stateful class component with this project. E
 - Add the ability to remove any todos that you have completed. `.filter` will be your best friend here. When a user clicks on the `Clear Completed` button call your handler function that will filter out any todos that have the completed flag toggled to `true`.
 - **Now is the time to style** Take your time to make this an app that you can be proud of.
 
-#### Stretch Problems
+## Stretch Problems
 
 - **Persist your data** in `window.localStorage()` hint: you may have to pass your data to a stringifier to get it to live inside the `localStorage()` of the browser. This will cause it to persist past the page refresh.
 
